@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script defer src="firebase.js" type="module" ></script>
+    <!-- boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>signuppage</title>
+</head>
+<body>
+    <nav></nav>
+    <section class="register"> 
+          <h2 style="font-weight: 600; display: flex;"> 
+             <div class="profile-picture">
+            <img src="img/logo.png" alt="" srcset="">
+        </div> TechiesSocial</h2>
+        <div class="container">
+         
+
+            <!-- signup form -->
+            <form action="" class="signup animate__fadeInDown">
+
+                <div>
+                    <label for="" class="text-muted">Username</label>
+                    <input type="text" placeholder="Username" name="email" id="Username" required>
+                </div>
+            <div>
+                <label for="" class="text-muted">Email</label>
+                <input type="text" placeholder="Email" id="email">
+            </div>
+
+            <div>
+                <label for="" class="text-muted">Password</label>
+                <input type="password" placeholder="Password" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary" id ="signUp">SignUp</button>
+            <p class="text-muted">or signup with</p>
+            <button type="submit" class="btn btn-primary" id = "googleSignInBtn"><i class='bx bxl-google'></i>google</button>
+
+            <p class="text-muted">already have an account?</p>
+            <a  onclick="toggleForm()" class="btn">login</a>
+            </form>
+
+
+            <!-- loginform -->
+            <form action="" class="login animate__fadeInDown">
+                <div>
+                    <label for="" class="text-muted">Email</label>
+                    <input type="email" placeholder="Email" name="email" id="emaillogin" required>
+                </div>
+    
+                <div>
+                    <label for="" class="text-muted" >Password</label>
+                    <input type="password" placeholder="Password" name="password" id="passwordlogin" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="login" >Login</button>
+
+                <p class="text-muted">don't have an account?</p>
+                <p >or login with</p>
+                <button type="submit" class="btn btn-primary" id = "googleLogInBtn"><i class='bx bxl-google'></i>google</button>
+    
+                <p class="text-muted">don't have an account?</p>
+                <a  onclick="toggleForm()" class="btn">signup</a>
+                </form>
+        </div>
+    </section>
+</body>
+<script>
+    function toggleForm() {
+        
+    const signup = document.querySelector('.signup');
+    const login = document.querySelector('.login');
+
+    // Check if the signup form is currently visible
+    const isSignupVisible = getComputedStyle(signup).display !== 'none';
+
+    // Toggle visibility based on the current state
+    if (isSignupVisible) {
+        signup.style.display = 'none';
+        login.style.display = 'flex'; 
+      
+    } else {
+        signup.style.display = 'flex';
+        login.style.display = 'none';
+        
+    }
+}
+
+</script>
+</html>
